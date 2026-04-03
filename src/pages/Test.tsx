@@ -108,6 +108,9 @@ export default function Test() {
             Task {prompt.task} — {prompt.type.replace('_', ' ')}
           </div>
           <p className="leading-relaxed text-foreground">{prompt.text}</p>
+          {prompt.task === 1 && prompt.type === 'academic' && (
+            <PlaceholderChart promptText={prompt.text} />
+          )}
         </div>
 
         {/* Controls */}
