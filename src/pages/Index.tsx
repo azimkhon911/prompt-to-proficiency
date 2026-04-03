@@ -41,7 +41,7 @@ export default function Index() {
       {/* Hero */}
       <div className="bg-primary px-4 py-16 text-primary-foreground">
         <div className="container mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-5xl">IELTS Writing Practice</h1>
+          <h1 className="font-serif text-4xl md:text-5xl">Bandly</h1>
           <p className="mt-4 text-lg text-primary-foreground/70">
             Practice with real exam-style prompts and get AI-powered feedback
           </p>
