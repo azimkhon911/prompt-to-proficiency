@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Send, Loader2 } from 'lucide-react';
+import PlaceholderChart from '@/components/PlaceholderChart';
 
 export default function Test() {
   const { promptId } = useParams<{ promptId: string }>();
