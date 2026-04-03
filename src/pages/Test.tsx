@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Send, Loader2 } from 'lucide-react';
+import PlaceholderChart from '@/components/PlaceholderChart';
 
 export default function Test() {
   const { promptId } = useParams<{ promptId: string }>();
@@ -107,6 +108,9 @@ export default function Test() {
             Task {prompt.task} — {prompt.type.replace('_', ' ')}
           </div>
           <p className="leading-relaxed text-foreground">{prompt.text}</p>
+          {prompt.task === 1 && prompt.type === 'academic' && (
+            <PlaceholderChart promptText={prompt.text} />
+          )}
         </div>
 
         {/* Controls */}
