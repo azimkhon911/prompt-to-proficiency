@@ -14,7 +14,89 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      attempts: {
+        Row: {
+          coherence_score: number | null
+          created_at: string
+          essay: string
+          feedback: Json | null
+          grammar_score: number | null
+          id: string
+          lexical_score: number | null
+          overall_score: number | null
+          prompt_id: string
+          task_score: number | null
+          time_taken: number
+          user_id: string
+          word_count: number
+        }
+        Insert: {
+          coherence_score?: number | null
+          created_at?: string
+          essay: string
+          feedback?: Json | null
+          grammar_score?: number | null
+          id?: string
+          lexical_score?: number | null
+          overall_score?: number | null
+          prompt_id: string
+          task_score?: number | null
+          time_taken: number
+          user_id: string
+          word_count: number
+        }
+        Update: {
+          coherence_score?: number | null
+          created_at?: string
+          essay?: string
+          feedback?: Json | null
+          grammar_score?: number | null
+          id?: string
+          lexical_score?: number | null
+          overall_score?: number | null
+          prompt_id?: string
+          task_score?: number | null
+          time_taken?: number
+          user_id?: string
+          word_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "attempts_prompt_id_fkey"
+            columns: ["prompt_id"]
+            isOneToOne: false
+            referencedRelation: "prompts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      prompts: {
+        Row: {
+          created_at: string
+          id: string
+          min_words: number
+          task: number
+          text: string
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          min_words?: number
+          task: number
+          text: string
+          type: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          min_words?: number
+          task?: number
+          text?: string
+          type?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
